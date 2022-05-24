@@ -1,0 +1,1981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 2022-05-24 mar 10:14 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tarea I</title>
+<meta name="generator" content="Org mode" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Tarea I
+<br />
+<span class="subtitle">Conceptos Básicos - Trigonometría Geometría Analítica I</span>
+</h1>
+<p>
+Integrantes:\newline
+</p>
+
+<p>
+Bermudes Flores Leslie Laura\newline
+</p>
+
+<p>
+Granados Díaz Natalia Estpehania\newline
+</p>
+
+<p>
+Lorenzana Pedraza Marco Antonio\newline
+</p>
+
+<p>
+Martinez Cerriteño César \newline
+</p>
+
+<p>
+Becerra Marín Erick 
+</p>
+
+
+<p>
+\newpage 
+</p>
+
+
+<p>
+1.Hallar las coordenadas del vértice \(B\) del triángulo equilátero \(\bigtriangleup OAB\) con vértices \(O(0,0)\) Y \(A(0,-a)\). Calcule el área del triángulo. <br />
+</p>
+
+
+<p>
+i) Conocemos las coordenadas de dos puntos:
+</p>
+
+<p>
+\[O(0,0)\quad y \quad A(0,-a)\]
+</p>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/o0.png" alt="o0.png" />
+</p>
+</div>
+
+
+
+<p>
+Como sabemos que por definición, un triángulo equilátero tiene sus tres lados iguales, entonces sus vertices se encuentran a la misma distancia uno del otro. 
+Ahora usamos la fórmula de la distancia entre dos puntos, a fin de conocer la distancia entre los vértices. 
+</p>
+
+<p>
+\[d(0,A)=\sqrt{(0-0)^2+ (-a-0)^2}\]
+\[d(0,A)=\sqrt{(0)^2+(-a)^2}\]
+\[d(0,A)=\sqrt{0+a^2}\]
+\[ \boxed{d(0,A)=\sqrt{a^2} =a} \] <br />
+</p>
+
+<p>
+Sabemos que los vértices O y A se encuentran sobre el eje \(y\) por lo que podemos afirmar que la coordenada en \(x\) del vértice B se
+encuentra en el punto medio entre los vértices O y A.
+</p>
+
+
+<p>
+ii) Coordenada \(x\) del punto medio entre O y A.
+</p>
+
+<p>
+\[x=\frac{0+0}{2}\]
+\[x=\frac{0}{2}\]
+\[ \boxed{x= 0}} \]
+</p>
+
+
+<p>
+iii) Coordenada y del punto medio entre O y A.
+</p>
+
+<p>
+\[y=\frac{o+(-a)}{2}\]
+</p>
+
+
+<p>
+\[ \boxed{y=\frac{-a}{2}} \]
+</p>
+
+
+<p>
+Entonces el punto medio entre O y A se encuentra en el punto \((0, (-a/2))\), pero en este caso nos interesa únicamente la coordenada en \(y\) 
+\((-a/2)\), ya que como habíamos dicho esta es la coordenada en \(y\) de nuestro vértice B, el cual podemos expresar como \[(X_B , (-a/2))\] siendo
+X<sub>B</sub> su coordenada en x.<br />
+</p>
+
+
+<p>
+iv) Ahora podemos utilizar nuevamente la fórmula de la distancia entre dos puntos y para determinar el valor de la coordenada X<sub>B</sub>:
+</p>
+
+<p>
+\[d(O,B)=\sqrt{(X_B-0)^2 + ((-a/2) - 0)^2}\]
+Recordemos que la distancia entre todos los vértices es igual, por lo tanto \(d(O,A)= d(0,B))\)
+\[a=\sqrt{X_B^2 + (a^2/4)}\]
+\[a^2= X_B^2 + (a^2/4)\]
+\[X_B^2= a^2 - (a^2/a)\]
+\[X_B = \sqrt[\pm]{a^2-(a^2/4)}\]
+\[X_B = \sqrt[\pm]{a^2 (4/4)- (a^2/4)}\]
+\[X_B = \sqrt[\pm]{\frac{4a^2}{4} - \frac{a^2}{4}}\]
+\[X_B = \sqrt[\pm]{\frac{4a^2-a^2}{4}}\]
+\[X_B = \sqrt[\pm]{\frac{3a^2}{4}}\]
+\[X_B = \pm \frac{\sqrt{3} \sqrt{a^2}}{\sqrt{4}}\]
+\[X_B = \pm \frac{\sqrt{3}a}{2}}\]
+\[X_B1 = \frac{a\sqrt{3}}{2}}\]
+</p>
+
+
+<p>
+\[ \boxed{-\frac{a\sqrt{3}}{2}} \]
+</p>
+
+
+<p>
+Ahora que sabemos las posibles coordenadas en \(x\) del vértice B, podemos expresar las coordenadas del vértice de la siguiente manera:
+</p>
+
+<p>
+\[B_4=\left(\frac{a \sqrt{3}}{2}, \frac{-a}{2}\right) \quad y \quad B_2=\left(\frac{a- \sqrt{3}}{2}, \frac{-a}{2}\right)\]
+</p>
+
+<p>
+Igualmenbte podemos decir qye X<sub>B</sub> es igual a la altura del triángulo, ya que, su valor es la distancia que hay entre el origen y
+la coordenada \(x\) del vértice B. <br />
+</p>
+
+<p>
+Con los resultados que obtuvimos, será posible calcular el área del triángulo sustituyendo dichos resultados en la fórmula del área
+del triángulo. <br />
+\(A=\frac{b \cdot h}{2}\) <br />
+A= área <br />
+\(b= d(O,A)=a\) <br />
+\(h=\frac{a\sqrt{3}}{2}\)
+</p>
+
+<p>
+\[A=\frac{(a)\cdot ((a\sqrt{3})/2)}{2}\] 
+\[A = \frac{((a^2\sqrt{3})/2)}{2}\]
+\[ \boxed{A=\frac{a^2\sqrt{3}}{4}} \]
+\blacksquare <br />
+</p>
+
+<p>
+\newpage
+2.Demostrar que los tres puntos \(C(12,1)\), \(A(-3,-2)\) y \(B(2,-1)\) son colineales, es decir, que están sobre una misma línea recta.
+</p>
+
+<p>
+i) Primero se localizan los puntos en el plano
+</p>
+
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/abc2.png" alt="abc2.png" />
+</p>
+</div>
+
+
+
+<ul class="org-ul">
+<li>Definición: Tres o más puntos de un plano son colineales si pertenecen a una misma línea recta, es decir, si las pendientes entre cada par de puntos tiene el mismo valor.</li>
+
+<li>Fórmula de la pendiente de una recta</li>
+</ul>
+
+<p>
+\[ \boxed{m= \frac{Y_2-Y_1}{X_2-X_1}} \]
+</p>
+
+<p>
+ii) Solución 
+</p>
+
+<p>
+Dados los puntos de coordenadas \(C(12,1)\), \(A(-3,-2)\) y \(B(2,-1)\), 
+determinar si son o no colineales.
+</p>
+
+<p>
+\[m_A_B= \frac{-1+2}{2+3}=\frac{1}{5}=0.2\]
+\[m_B_C= \frac{-1-1}{2-12}=\frac{-2}{-10}=0.2\]
+\[m_A_C= \frac{-2-1}{-3-12}=\frac{-3}{-15}=0.2\]
+</p>
+
+<p>
+Por lo tanto cada una de las rectas determinadas por dos de los puntos dados tienen la misma pendiente, entonces
+por definición, son colineales. \newline
+</p>
+
+<p>
+iii) Demostración alternativa 
+</p>
+
+<p>
+Primero asignaremos letra a cada punto para indentificarlos de la siguiente manera: A(-3,-2), B(2,-1) y C(12,1). <br />
+</p>
+
+<p>
+Si todos los puntos son colineales, entonces, la suma de \(d(A,B)\) y d(B,C) deberá ser igual a d(A,C), ahora procedemos a 
+calcular las distancias con la fórmula de la distancia entre dos punos.<br />
+</p>
+
+
+<p>
+\[d(A,B)= \sqrt{((2)-(-3))^2 + ((-1)-(-2))^2}\]
+\[d(A,B)= \sqrt{(5)^2 + (1)^2}\]
+\[d(A,B)= \sqrt{25+1}\]
+\[ \boxed{\therefore d(A,B)= \sqrt{26}} \]
+</p>
+
+
+<p>
+\[d(B,C)=\sqrt{(12)-(2))^2 + ((1)-(-1))^2}\]
+\[d(B,C)=\sqrt{(10)^2 + (2)^2}\]
+\[d(B,C)=\sqrt{100+4}\]
+\[ \boxed{\therefore d(B,C)= \sqrt{104}} \]
+</p>
+
+<p>
+\[d(A,C)=\sqrt{((12)-(-3))^2+((1)-(-2))^2\]
+\[d(A,C)=\sqrt{(15)^2+(3)^2}\]
+\[d(A,C)=\sqrt{225+9}\]
+\[ \boxed{\therefore d(A,C)= \sqrt{234}} \]
+</p>
+
+
+<p>
+Ahora nos queda por comprobar si la suma de d(A,B) y d(B,C) es igual a d(A,C) para poder demostrar su colinealidad. <br />
+</p>
+
+<p>
+\[d(A,B)+d(B,C)=d(AC)\]
+Sustituyendo los valores de la distancia tenemos:
+\[\sqrt{26}+\sqrt{104}=\sqrt{234}\]
+\[\sqrt{26} + 2\sqrt{26}=3\sqrt{26}\]
+Simplificamos las raices:
+\[ \boxed{3\sqrt{26} \equiv 3\sqrt{26}} \]
+</p>
+
+
+<p>
+Al comprobar la igualdad, queda demostrado que los tres puntos son colineales.
+</p>
+
+
+<p>
+\blacksquare <br />
+</p>
+
+
+<p>
+\newpage
+3.Demuestre analíticamente que las diagonales de un paralelogramo se bisecan entre sí. \newline
+</p>
+
+
+
+
+<p>
+i) Primero se dibuja el paralelogramo y después se introduce un sistema de coordenadas. \newline
+</p>
+
+
+
+
+<p>
+ii) Se escoge un vértice como el origen y un eje coordenado a lo largo de un lado del paralelogramo. \newline
+</p>
+
+
+
+
+<p>
+iii) Después se escriben las coordenadas de lo vértices como \(O(0,0), P_1(a,0), P_2(b,c)\) y \(P_3(a+b,c)\). (Las coordenadas de \(P_2\)
+     y \(P_3\) expresan el hecho de que \(P_2P_3\) y \(OP_1\) son paralelos y tienen la misma longitud. Se logra igualando las ordenadas de \(P_2\) y \(P_3\)
+     y haciendo que la abscisa de \(P_3\) exceda en \(a\) a la abscisa de \(P_2\)). 
+</p>
+
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/paralelogramo3.png" alt="paralelogramo3.png" />
+</p>
+</div>
+
+
+<p>
+iv) Para mostrar que \(OP_3\) y \(P_1P_2\) se bisecan mutuamente, se encuentran las coordenadas del punto medio de cada diagonal. 
+\newline
+</p>
+
+
+<p>
+Punto medio de \(OP_3\): 
+\[x= \frac{a+b}{2}, \quad y= \frac{c}{2}\]
+Punto medio \(P_1P_2\):
+\[x= \frac{a+b}{2}, \quad y=\frac{c}{2}\]
+</p>
+
+<p>
+Como el punto medio de cada diagonal es 
+\[\left(\frac{a+b}{2},\frac{c}{2}\right)\]
+la demostración analíticamente de que las diagonales de un paralelogramo se bisecan entre si queda probado. \newline
+</p>
+
+
+
+
+
+<p>
+4.Hallar la ecuación del lugar geométrico de un punto que se mueve de tal manera que siempre equidista de dos puntos dados 
+\(A(1, −2) y B(−4, 1)\).
+</p>
+
+
+<ul class="org-ul">
+<li>Definición: Se dice que un punto es equidistante de un conjunto de figuras geométricas si las distancias entre ese punto y cada figura del conjunto son iguales</li>
+
+<li>Fórmula de la distancia</li>
+</ul>
+
+<p>
+\[ \boxed{d=\sqrt{(x_2-x_1)^2 + (y_2 - y_1)^2}} \]
+</p>
+
+<ul class="org-ul">
+<li>Puntos</li>
+</ul>
+
+<p>
+A(1,-2), B(-4,1) y P(x,y)
+</p>
+
+<p>
+i) Igualar la distancia de los puntos.
+</p>
+
+<p>
+De acuerdo con la definición, las distancias deben ser iguales para llamar al punto equidistante. Es decir:
+</p>
+
+<p>
+\[d(\overline{AP})= d(\overline{BP})\]
+</p>
+
+<ul class="org-ul">
+<li>Solución: Sustutición de la fórmula de la distancia, con los puntos dados.</li>
+</ul>
+
+<p>
+\[\big{(} \sqrt{(a-x)^2} + (-2-y)^2 = \sqrt{(-4-x)^2 + (1-y)^2 \big{)}^2\]
+\[(1-x)^2+(2+y)^2=(4+x)^2+(1-y)^2\]
+\[(1-x)^2-(4+x)^2=(1-y)^2-(2+ý)^2\]
+\[(1-x+4)(1-x-4-x)=(1-y+2+y)(1-y-2-y)\]
+\[-\big{[}(5)(-3-2x)=(3)(-1-2y)\big{]}\]
+\[5(3+2x)=3(1+2y)\]
+\[15+10x=3+6y\] 
+\[12+10x=6y\]
+\[ \boxed{3y-5x=6} \]
+</p>
+
+
+
+<p>
+\(\therefore 3y-5x=6\) Es la ecuación del lugar geométrico de un punto que se mueve de tal  manera que siempre equidista de dos puntos dados.
+\newpage
+5.Demuestre analíticamente que si P es un punto sobre la circunferencia de un círculo, entonces los segmentos de recta que unen P
+con los extremos de un diámetro son perpendiculares.
+</p>
+
+
+<p>
+i) Representación
+</p>
+
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/circunferencia.png" alt="circunferencia.png" />
+</p>
+</div>
+
+
+<p>
+ii) Demostración
+</p>
+
+
+<p>
+Sea P(x,y), un punto sobre la circunferencia de radio \(r\) con centro en el origen, entonces, debe cumplir la ecuación:
+</p>
+
+
+<p>
+\[\[ \boxed{x^2+y^2=r^2} \]\]
+</p>
+
+
+<p>
+Sean \(S_1(a,b)\) y \(S_2(c,d)\) los extreemos de algún diámetro de la circunferencia. Queremos demostrar que:
+\[{S_1P} \quad 1 \quad {PS_2} [1]\]
+</p>
+
+<p>
+Notemos que si P es distinto a S<sub>1</sub> y S<sub>2</sub> entonces se forma un triángulo \(\vartriangleS_1PS_2\). Si [1] es cierto entonces, se debe satisfacer 
+el teoréma de Pitágoras. \newline
+Aplicando el teorema de Pitágoras:
+</p>
+
+<p>
+\[[d(S_1,P)]^2 + [D(P,S_2)]^2=[\sqrt{(x-a)^2+(y-b)^2}]^2 + [\sqrt{(c-x)^2+(d-y)^2}]^2\]
+\[=x^2-2ax+a^2+y^2-2yb+b^2+c^2-2cx+x^2+s^2-2dy+y^2\]
+</p>
+
+<p>
+Pero
+</p>
+\begin{equation*}
+\left.
+\begin{aligned}
+x^2+y^2=r^2\\
+a^2+b^3=r^2\\
+c^2+d^2=r^2
+\end{aligned}
+\right\}
+\quad\text{Pues $P,S_1$ y $S_2$ están en la circunferencia.}
+\end{equation*}
+
+<p>
+\[=r^2+r^2+r^2-2ax-2yb-2cx-2dy\]
+\[=4r^2-2x(a+c)-2y(b+d)\]
+</p>
+
+<ul class="org-ul">
+<li>Uso de la simetría respecto al origen:</li>
+</ul>
+
+<p>
+Para la función \(f(x)=x^3\) impar probamos la simetría respecto al origen. <br />
+</p>
+
+
+<p>
+Dada una \(x=1\) tenemos uns \(f(x)=1\) y el punto \(A=(1,1)\), también dada una \(x=-1\) tenemos un
+\(f(x)=-1\) y el punto \(B(-1,-1)\). <br />
+</p>
+
+
+<p>
+Probamos la distancia de ambos respecto al origen:
+</p>
+
+
+<p>
+\[\sqrt{(1+0)^2 + (1+10)^2} \quad y \quad \sqrt{(-1+0)^2 + (-1+0)^2\]
+\[\sqrt{1+1} \quad y \quad \sqrt{(-1)^2 + (-1)^2}\]
+\[\sqrt{2} \quad y \quad \sqrt{2}\]
+</p>
+
+
+<p>
+Ambos están a la misma distancia. <br />
+</p>
+
+
+<p>
+\(\therefore\) Se cumple la propiedad. <br />
+</p>
+
+
+<p>
+6.A que lugar geométrico corresponden todos los puntos (x, y) de R que satisfacen la condición \(\{(x, y) | max{|x|, |y|} = 2\}\)
+</p>
+
+<p>
+\(\{\) máx= \(\{\mid x \mid, \mid y \mid \}=2\}\) <br />
+</p>
+
+<p>
+Significa que 
+</p>
+
+<p>
+\((\mid x \mid =2 ^\wedge \mid y \mid  \leq 2)\) o \((\mid y\mid =2 ^\wedge \mid x \mid \leq 2)\)
+</p>
+
+<p>
+\[x=2,-2 ^\wedge -2 \leq y \leq 2 \quad o \quad y=2,-2 ^\wedge -2 \leq x \leq 2\]
+</p>
+
+
+
+
+
+<p>
+7.Probar que la gráfica de una función impar es simétrica con respecto al origen.
+</p>
+
+<p>
+La función impar está definida por <br />
+\[\forall x \in f(x)=-f(x)\] 
+Para poder probar que son simétricas respecto al origen, ocuparemos un punto \(P(x,y)\) cualquiera y
+por definición de \(P'\) sería \(P'(-x,-y)\) y ambos distan a un punto O(0,0) origen. <br />
+Supongamos que la distancia de P a O es igual a la de \(P'\) a O.
+</p>
+
+<ul class="org-ul">
+<li>Aplicamos la fórmula de la distancia entre dos puntos</li>
+</ul>
+
+<p>
+\[\overline{PO}=\sqrt{(x-o)^2 + (y-o)^2} \quad y \quad \overline{P'O}=\sqrt{(-x-o)^2 + (-y-o^2)}\]
+\[\overline{PO}=\sqrt{x^2+y^2} \quad y \quad \overline{P'O}=\sqrt{(-x)^2+(-y)^2}\]
+\[ \boxed{\sqrt{x^2+y^2} = \sqrt{x^2+y^2}} \]
+\(\therefore \overline{PO}= \overline{P'O}\) y esto se cumple para cualquier función impar. <br />
+</p>
+
+
+
+<p>
+8.Encuentre el dominio y rango de \(f: R \rightarrow R\) a partir de la gráfica de \(f(x)= x−1, f(x)=4−x\)
+</p>
+
+<ul class="org-ul">
+<li>\(f(x) = x-1\)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/x1.png" alt="x1.png" />
+</p>
+</div>
+
+
+<p>
+El dominio de la función son todos los numeros reales \((\mathbb{R})\) y su rango igual \((\mathbb{R})\).
+</p>
+<ul class="org-ul">
+<li>\(fx)=4-x^2\)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/4x.png" alt="4x.png" />
+</p>
+</div>
+
+<p>
+El dominio de la función son todos los numeros reales \((\mathbb{R})\) y su rango es \(\{f(x) \geq 4 \}\).
+</p>
+
+<p>
+\newpage
+</p>
+<ul class="org-ul">
+<li>\(f(X)=2^x\)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/2x.png" alt="2x.png" />
+</p>
+</div>
+
+<p>
+El dominio de la función son todos los numeros reales \((\mathbb{R})\) y su rango son todos los numeros reales positivos \((\mathbb{R}^+)\).
+</p>
+
+<ul class="org-ul">
+<li>\(f(x)= \sqrt{16-x^2}\)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/16.png" alt="16.png" />
+</p>
+</div>
+
+<p>
+El dominio de la función es \(\{-4 \geq x \geq 4\}\) y su rango es \(\{0 \geq x \geq 4\}\) 
+</p>
+
+<p>
+\newpage
+</p>
+<ul class="org-ul">
+<li>\(f(x)=\frac{1}{x^2}\)</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/frac.png" alt="frac.png" />
+</p>
+</div>
+
+<p>
+El dominio de la función es \(\{x \neq 0\}\) y su rango son todos los reales positivos \((\mathbb{R}^+)\). <br />
+</p>
+
+
+
+<p>
+9.Determina la inyectividad, la suprayectividad y la biyectividad de las siguientes funciones \(f:R \rightarrow R\).\newline
+</p>
+
+<p>
+i) \(f(x) = \frac{\mid x \mid}{x}\) \newline
+</p>
+
+<ul class="org-ul">
+<li>Inyectividad</li>
+</ul>
+
+<p>
+Suponemos
+\[f(a_1)=f(a_2)\]
+\[\therefore \frac{\mid a_1 \mid}{a_1}= \frac{\mid a_2 \mid}{a_2}\]
+\[\rigtarrow a_1= \frac{\mid a_1 \mid}{\mid a_2 \mid} \cdot a_2\]
+\[\therefore a_1 \neq a_2\]
+Esto quiere decir que no es inyectiva. 
+</p>
+
+<ul class="org-ul">
+<li>Suprayectividad</li>
+</ul>
+
+<p>
+\[f: \mathbb{R} \rightarrow \mathbb{R}\]
+\[Dom f(x):\{{\mathbb{R}\}\]
+</p>
+
+\begin{equation*}
+\left.
+\begin{aligned}
+1; x>0 \\
+-1; x<0
+\end{aligned}
+\right\}
+\quad\text{= Img f(x)}
+\end{equation*}
+<p>
+Como la imagen no son todos los numeros reales, entonces:
+\[Img f(x):\{1; x>0, -1;x<0\} \neq \{\mathbb{R}\}\]
+\(\therefore\) No es suprayectiva, ya que, por definición de suprayectividad,
+la imágen debe ser igual al codominio, y esto no se cumple. \newline
+</p>
+
+<ul class="org-ul">
+<li>Biyectividad</li>
+</ul>
+
+<p>
+Como no es inyectiva ni suprayectiva, entoces, por definición, no es biyectiva.  \newline
+</p>
+
+
+<p>
+ii) \(f(x) = [x]\), máximo entero menor o igual a \(x\) \newline
+</p>
+
+
+<ul class="org-ul">
+<li>Inyectividad</li>
+</ul>
+
+<p>
+Suponemos 
+\[f(a_1)=f(a_2)\]
+\[f(1.5)=1=f(1.6)\]
+\[1.5 \neq 1.6\]
+Por lo tanto, la función \(f(x)\) no es inyectiva.
+</p>
+
+
+<ul class="org-ul">
+<li>Suprayectividad</li>
+</ul>
+
+<p>
+\[f: \mathbb{R} \rightarrow \mathbb{R}\]
+\[Dom f(x):\{\mathbb{Z}\}\]
+\[Img f(x):\{\{\mathbb{Z}\} \cup \{0\}\}\]
+&there4;
+\[Img f(x):\{\{\mathbb{Z}\} \cup \{0\}\} \neq \{\mathbb{R}\}\]
+Entonces, por definición, no es suprayectiva. \newline
+</p>
+
+<ul class="org-ul">
+<li>Biyectividad</li>
+</ul>
+
+
+<p>
+Como la función no es inyectiva ni suprayectiva, por definición, no es biyectiva.  \newline
+</p>
+
+
+<p>
+\newpage
+iii) \(f(x) = x^3 - 2\) \newline
+</p>
+
+<ul class="org-ul">
+<li>Inyectividad</li>
+</ul>
+<p>
+Suponemos:
+\[f(a_1)=(a_1)^3 -2\]
+\[f(a_2)=(a_2)^3 - 2\]
+\[(a_1)^3-2=(a_2)^3-2\]
+\[(a_1)^3 - 2 + 2 = (a_2)^3 -2+2\]
+\[(a_1)^3=(a_2)^3\]
+\[\sqrt[3]{(a_1)^3}= \sqrt[3]{(a_2)^3}\]
+\[a_1=a_2\]
+Por lo tanto es inyectiva.
+</p>
+
+<ul class="org-ul">
+<li>Suprayectividad</li>
+</ul>
+
+<p>
+\[f: \mathbb{R} \rightarrow \mathbb{R}\]
+\[Dom f(x):\{\mathbb{R}\}\]
+\[Img f(x):\{\mathbb{R}\}\]
+Como la imágen es igual al codominio
+\[Img f(x)=\{\mathbb{R}\}= \{\mathbb{R}\}\]
+Por definición, es suprayectiva.
+</p>
+
+<ul class="org-ul">
+<li>Biyectividad</li>
+</ul>
+
+<p>
+Como la función es inyectiva y suprayectiva, por definición, es biyectiva. \newline
+</p>
+
+
+<p>
+iv)  f(x) =  \mid 
+ x-1 
+\mid
+ \newline
+</p>
+
+<ul class="org-ul">
+<li>Inyectividad</li>
+</ul>
+
+<p>
+Suponemos 
+\[f(a_1)=f(a_2)\]
+\[f(a_1)=\mid a_1 - 1 \mid\]
+\[f(a_2)=\mid a_2 - 1 \mid\]
+\[\rightarrow \mid a_1 - 1 \mid = \mid a_2 - 1 \mid\]
+\[a_1 -1 < 0; a_2 - 1 >0\]
+\[- (a_1 - 1)= a_2 - 1\]
+\[-a_1 + 1 =a_2-1\]
+\[a_1=a_2-1-1\]
+\[-a_1=a_2-2\]
+\[\therefore a_1 \neq a_2\]
+Por lo tanto no es inyectiva. 
+</p>
+
+
+<ul class="org-ul">
+<li>Suprayectividad</li>
+</ul>
+
+<p>
+\[f: \mathbb{R} \rightarrow \mathbb{R}\]
+\[Dom f(x): \{\{\mathbb{R}\} \cup \{0\}\}\]
+\[Img f(x): \{R^+\}\]
+\[Img f(x):\{R^+\} \neq \{\mathbb{R}\}\]
+</p>
+
+<p>
+Por lo tanto, por definición, no es suprayectiva.
+</p>
+
+<ul class="org-ul">
+<li>Biyectividad</li>
+</ul>
+
+<p>
+Como no es inyectiva ni suprayectiva, por definición, no es biyectiva. \newline
+</p>
+
+
+<p>
+v) \(f(x) = \frac{x - 2}{x+2}\) \newline
+</p>
+
+<ul class="org-ul">
+<li>Inyectividad</li>
+</ul>
+
+<p>
+Suponemos:
+\[f(a_1)=f(a_2)\]
+\[f(a_1)=\frac{a_1 - 2}{a_1 +2}\]
+\[f(a_2)=\frac{a_2 - 2}{a_2 +2}\]
+\[\therefore \frac{a_1 - 2}{a_1 +2}=\frac{a_2 -  2}{a_2 +2}\]
+\[(a_1 -2) \cdot (a_2 + 2)=(a_1 + 2) \cdot (a_2 - 2)\]
+\[a_1 \cdot a_2 + 2a_1 -  2a_2 -4=a_1 \cdot a_2 - 2a_1+2a_2 -4\]
+\[2a_1 - 2a_2= -2a_1 + 2a_2\]
+\[2a_1 + 2a_1=2a_2+2a_2\]
+\[4a_1=4a_2\]
+\[\frac{4a_1}{4}=\frac{4a_2}{4}\]
+\[a_1=a_2\]
+Por lo tanto, es inyectiva.
+</p>
+
+
+<ul class="org-ul">
+<li>Suprayectividad</li>
+</ul>
+
+<p>
+\[f: \mathbb{R} \rightarrow \mathbb{R}\]
+\[Dom f(x):\{\{\mathbb{R}\}- \{-2\}\}\]
+\[Img f(x):\{\mathbb{R}\}\]
+Entonces
+\[Img f(x):\{\mathbb{R}\} = \{\mathbb{R}\}\]
+Por lo tanto, por definición, es suprayectiva. \newline
+</p>
+
+
+<ul class="org-ul">
+<li>Biyectividad</li>
+</ul>
+
+<p>
+Por definición, como la función es inyectiva y suprayectiva, entonces, la función también es biyectiva. \newline
+</p>
+
+<p>
+Justifica tus afirmaciones.
+\newline
+</p>
+
+
+
+
+
+<p>
+10.Gráfica las funciones trigonométricas
+\[y = cos 2x, \quad y = 4 sin \frac{x}{2}, \quad y=cos \left(3x + \frac {2 \pi}{3}\right)\]
+\newline
+encuentre su amplitud, período y desplazamiento. \newline
+</p>
+
+<p>
+a) \(y= cos 2x\)
+</p>
+
+<ul class="org-ul">
+<li>Grafica</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/cos2x.png" alt="cos2x.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Fórmula</li>
+</ul>
+<p>
+\[ \boxed{y= A sen (Bt+c) + K} \]
+</p>
+
+
+<p>
+Donde: \newline
+A = Amplitud \newline
+B = Frecuancia \newline
+C = Desfase en el eje x \newline
+K = Desplazamiento en el eje y. \newline
+</p>
+
+<ul class="org-ul">
+<li>Solución \newline</li>
+</ul>
+
+
+<p>
+i) Sustitución \newline
+</p>
+
+
+<p>
+Como 
+\[y=cos 2x\]
+\[\therefore y=A cos (2x+C)+K\]
+Donde: \newline
+A = 1 \newline
+B = 2 \newline
+C = 0 \newline
+K = 0 \newline
+</p>
+
+
+<p>
+ii) Calculo del periodo
+</p>
+
+<p>
+\[T= \frac{2 \pi}{\mid B \mid}\]
+Sustitución
+\[T= \frac{2 \pi}{\mid 2 \mid}\]
+Como el valor absoluto de 2 es 2 entonces
+\[T = \frac{2 \pi}{2}\]
+\[= \pi\]
+</p>
+
+
+<p>
+\[ \boxed{\therefore Periodo= \pi} \]
+</p>
+
+
+<p>
+iii) Cálculo del desplazamiento = \(\frac{C}{B}\)
+</p>
+
+
+<p>
+Sustitución:
+</p>
+
+<p>
+\[d = \frac{0}{2}\]
+\[ \boxed{\therefore Desplazamiento = 0} \]
+</p>
+
+
+<p>
+Por lo tanto: \newline
+Amplitud = 1 \newline
+Periodo = \(\pi\) \newline
+Desplazamiento (desfase) x = 0 \newline
+Desplazamiento en el eje y = 0 \newline
+</p>
+
+<p>
+\newpage
+b) \(y = sen \frac{x}{2}\)
+</p>
+
+<ul class="org-ul">
+<li>Gráfica</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/4sen.png" alt="4sen.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Fórmula</li>
+</ul>
+<p>
+\[ \boxed{y= A sen (Bt+c) + K} \]
+</p>
+
+
+<ul class="org-ul">
+<li>Solución \newline</li>
+</ul>
+
+
+<p>
+i) Sustitución \newline
+</p>
+
+
+<p>
+Como 
+\[y = 4 sen \frac{x}{2}\]
+\[\therefore y= 4 seb \left(\frac{x}{2} + C\right) + K\]
+Donde: \newline 
+A = 4 \newline
+B = \(\frac{1}{2}\) \newline
+C = 0 \newline
+K = 0 \newline
+</p>
+
+<p>
+ii) Cálculo del periodo
+\[T= \frac{2 \pi}{\mid B \mid}\]
+Sustitución
+\[T= \frac{2\pi}{1/2}\]
+\[T=\pi\]
+\[ \boxed{\therefore Periodo= \pi$$} \]
+</p>
+
+<p>
+iii) Cálculo del desplazamiento = \(\frac{C}{B}\) 
+</p>
+
+<p>
+Sustitución:
+</p>
+
+<p>
+\[d = \frac{0}{1/2}\]
+\[ \boxed{\therefore Desplazamiento = 0} \]
+</p>
+
+<p>
+Por lo tanto: \newline
+Amplitud = 4 \newline
+Periodo = \(\pi\) \newline
+Desplazamiento (desfase) x = 0 \newline
+Desplazamiento en el eje y = 0 \newline
+</p>
+
+
+<p>
+c) \(y = cos \left(3x+ \frac{2 \pi}{3}\right)\)
+</p>
+
+<ul class="org-ul">
+<li>Gráfica</li>
+</ul>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/cos.png" alt="cos.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>Fórmula</li>
+</ul>
+<p>
+\[ \boxed{y= A sen (Bt+c) + K} \]
+</p>
+
+
+<ul class="org-ul">
+<li>Solución \newline</li>
+</ul>
+
+
+<p>
+i) Sustitución \newline
+</p>
+
+
+<p>
+Como 
+\[y = cos \left(3x +\frac{2 \pi}{3}\right)\]
+\[\therefore y= A cos \left(3x + \frac{2 \pi}{3}\right) + K\]
+Donde: \newline 
+A = 1 \newline
+B = 3 \newline
+C = \(\frac{2 \pi}{3}\) \newline
+K = 0 \newline
+</p>
+
+<p>
+ii) Cálculo del periodo
+\[T= \frac{2 \pi}{\mid B \mid}\]
+Sustitución
+\[T= \frac{2 \pi}{3}\]
+</p>
+
+<p>
+iii) Cálculo del desplazamiento = \(\frac{C}{B}\) 
+</p>
+
+<p>
+Sustitución:
+</p>
+
+<p>
+\[d = \frac{2 \pi}{{3/3}}\]
+\[ \boxed{\therefore Desplazamiento = 2 \pi} \]
+</p>
+
+<p>
+Por lo tanto: \newline
+Amplitud = 1 \newline
+Periodo = \(\frac{2 \pi}{3}\) \newline
+Desplazamiento x = \(2 \pi\) \newline
+Desplazamiento en el eje y = 0 \newline
+</p>
+
+
+<p>
+11.Probar las identidades: tan \(\left(\frac{x}{2}\right)\) = \(\pm \sqrt{\frac{1-cos x}{1+cos x}}\) y \(\frac{sen 75^o - sen 15^o}{cos 75^o + cos 15^o}\) = \(\frac{1}{\sqrt{3}}\) 
+</p>
+
+
+<ul class="org-ul">
+<li>Por demostrar: \(tan \left(\frac{x}{2}\right)\) =  \(\sqrt{\frac{1-cos x}{1+cos x}}\)</li>
+</ul>
+
+<p>
+a) Damos por hecho que ya se han demostrado los siguientes resultados:
+</p>
+
+<p>
+\[sen \left(\frac{x}{2}\right) =  \sqrt{\frac{1-cos (x)}{2}} \quad cos \left(\frac{x}{2}\right) = \sqrt{\frac{1+cos (x)}{2}}\]
+</p>
+
+
+
+<p>
+b) Sabemos que tan(x) se puede representar como \(tan(x)= \frac{sen(x)}{cos(x)}\) con esto tenemos:
+\[\rightarrow tan (x/2) = \frac{sen(x/2)}{cos(x/2)} = \frac{\sqrt{\frac{1-cos(x)}{2}}}{\sqrt{\frac{1+cos(x)}{2}}}\]
+elevado al cuadrado tenemos:
+\[\rightarrow tan^2(x/2)= \frac{(1-cos(x))/2}{(1+cos(x))/2}\]
+\[\rightarrow tan^2(x/2)= \frac{(1-cos(x))}{(1+cos(x))}\] retirando el cuadrado tenemos:
+\[\rightarrow tan(x/2) = \sqrt{\frac{1-cos(x)}{1+cos(x)}}\]
+\[ \boxed{\therefore tan(x/2) = \sqrt{\frac{1-cos(x)}{1+cos(x)}}} \]
+\blacksquare 
+</p>
+
+<p>
+\newpage
+</p>
+<ul class="org-ul">
+<li>Por demostrar: \(\frac{sen(75^o)-sen(15^o)}{cos(75^o)+cos(15^o)}=\frac{1}{\sqrt{3}}\)</li>
+</ul>
+<p>
+Resolviendo tenemos:
+\[\rightarrow \frac{sen(75^o)-sen(15^o)}{cos(75^o)+cos(15^o)}=\frac{[(\sqrt{2}+\sqrt{6})/4] - [(\sqrt{6}-\sqrt{2})/4]}{[(\sqrt{6}-\sqrt{2})/4] + (\sqrt{6}+[\sqrt{2})/4]}\]
+\[=\frac{(\sqrt{2})/2}{(\sqrt{6})/2}} = \frac{2\sqrt{2}}{2\sqrt{6}}=\frac{\sqrt{2}}{\sqrt{2}\sqrt{3}}=\frac{1}{\sqrt{3}}\]
+\[ \boxed{\therefore \frac{sen(75^o)-sen(15^o)}{cos(75^o)+cos(15^0)}=\frac{1}{\sqrt{3}}} \]
+\blacksquare
+</p>
+
+
+
+
+
+
+<p>
+12.Usando las formulas del seno y coseno de la suma de dos ángulos. Calcular \(sen 15^o\), \(cos 15^o\) y \(tan 15^o\).
+</p>
+
+<ul class="org-ul">
+<li>Solución</li>
+</ul>
+
+<p>
+a) \(sen 15^o\) 
+\[sen 15^o= sen (45^o-30^o)\]
+\[=sen 45^o \cdot cos 30^o - cos 45^o \cdot sen 30^o\]
+\[= \left(\frac{\sqrt{2}}{2}\right) \left(\frac{\sqrt{3}}{2}\right) - \left(\frac{\sqrt{2}}{2}\right) \left(\frac{1}{2}\right)\]
+\[= \left(\frac{\sqrt {2}}{4}\right) \left(\sqrt{3}-1\right)\] 
+\[ \boxed{sen 15^o=\left(\frac{\sqrt {2}}{4}\right) \left(\sqrt{3}-1\right)} \]
+</p>
+
+<p>
+b)\(cos 15^o\)
+\[cos 15^o= cos (45^o-30^o)\]
+\[=cos 45^o \cdot cos 30^o + sen 45^o \cdot sen 30^o\]
+\[=\left(\frac {\sqrt{2}}{2}\right) \cdot \left(\frac{\sqrt{3}}{2}\right) + \left(\frac{\sqrt{2}}{2}\right) \cdot \left(\frac{1}{2}\right)\]
+\[= \frac{\sqrt{2}}{4} \cdot \left(\sqrt{3}+1\right)\]
+\[ \boxed{cos 15^o=\frac{\sqrt{2}}{4} \cdot \left(\sqrt{3}+1\right)} \]
+</p>
+
+
+<p>
+c)\(tan 15^o\)
+\[tan 15^o= tan (45^o - 30^o)\]
+\[=\frac{tan 45^o - tan 30^o}{1+tan45^o tan30^o}\]
+\[=\frac{1-\sqrt{3}\3}{1+(1)(\sqrt{3}/3)}\] 
+\[= \frac {1- (\sqrt{3}/3)}{1+ (\sqrt{3}/3)}\]
+\[=2-\sqrt{3}\]
+\[ \boxed{tan 15^o=2-\sqrt{3}} \]
+</p>
+
+<p>
+13.Demuestre que para toda \(x\), \(a\) cos\((Bx)\) + \(b\) sen \((Bx)\) = A cos\((Bx - C)\) donde
+</p>
+
+<p>
+\[A=\sqrt{a^2 + b^2} \quad tan C = \frac{b}{a} \quad con \quad - \frac{\pi}{2}< C < \frac{\pi}{2}\]
+</p>
+
+<p>
+i) Verificar que \(cos(x)+sen(x)\) = \(\sqrt{2}\) cos \(\left(x-\frac{\pi}{4} \right)\) \newline
+</p>
+
+
+<p>
+\[A^2 cos^2(Bx-c)=a^2 + b^2 cos^2(Bx-c)\]
+\[=a^2 + b^2 (cos (Bx)cos(c) + (sen(Bx)sen(c))^2\] factorizando a cos(c) tenemos:
+\[=a^2 + b^2 (cos^2(c)) \left(cos(Bx) + \frac{sen(Bx)sen(c)}{cos(c)}\right)^2\]
+\[=a^2 + b^2 ((cos)^2(c)) (cos(Bx) + sen(Bx)+tan(c))^2\] donde \(tan(c)=\frac{b}{a}\), tenemos:
+\[=a^2 + b^2 ((cos)^2(c)) (cos(Bx) + sen(Bx) \cdot b/a)^2\]
+\[=\left(\frac{a^2 + b^2}{sec^2(c)}\right) (cos(Bx) + sen(Bx) \cdot b/a)^2\] donde \(sec^2(c)=tan^2(c)+1\) sustituimos y tenemos:
+\[=\left(\frac{a^2+b^2}{tan^2(c)+1}\right) (cos(Bx)+sen(Bx) \cdot b/a)^2\]
+\[=\left(\frac{a^2 + b^2}{((b^2)/a^2) + 1}\right) (cos(Bx) + b/a \cdot sen(Bx))^2\] multiplicando por a<sup>2</sup> tenemos:
+\[=\left(\frac{a^2(a^2+b^2)}{a^2+b^2}\right) (cos(Bx)+b/a \cdot sen(Bx))^2\]
+\[\Rightarrow A^2cos^2(Bx-C)=a^2(cos(Bx) + b/a \cdot sen (Bx))^2\] aplicando raiz cuadrada tenemos:
+\[ \boxed{Acos(Bx-C)=a \cdot cos(Bx)+b \cdot sen(Bx)} \]
+\blacksquare \newline
+</p>
+
+
+<p>
+ii)Verificar que \(cos(x)+sen(x)=\sqrt{2} \cdot cos(x - \pi/4)\)
+\[cos(x) + sen(x)= \sqrt{2} \cdot cos(x - \pi/4)\]
+\[=\sqrt{2} \cdot [cos(x)cos(\pi/4) + sen(x)sen(\pi /4)\]
+\[=\sqrt{2} \cdot [(\sqrt{2}/2) cos(x) + (\sqrt{2}/2) sen(x)]\]
+\[=\frac{(\sqrt{2}\sqrt{2})}{2} cos (x) +  \frac{(\sqrt{2}\sqrt{2})}{2} sen(x)\]
+&rArr; 
+\[ \boxed{cos(x) + sen(x) = cos(x) + sen(x)} \]
+\blacksquare \newline
+</p>
+
+
+<p>
+14.Probar que \(sen(x)\) + \(sen(y)\) = 2 \(sen\) \(\left(\frac{x+y}{2}\right) cos \left(\frac{x-y}{2}\right)\) \newline
+</p>
+
+<p>
+i) Por demostrar sen(x) + sen(y)= 2 \(sen\) \(\left(\frac{x+y}{2}\right) cos \left(\frac{x-y}{2}\right)\) \newline
+</p>
+
+<p>
+Conocemos las identidades trigonométricas \newline \(sen(\alpha + \beta)= sen(\alpha) cos(\beta) +  sen(\beta) cos(\alpha)\)
+y también a \newline \(sen(\alpha - \beta)= sen(\alpha)cos(\beta) - sen(\beta)cos(\alpha)\) si sumamos estas identidades tenemos: \newline
+</p>
+
+
+<p>
+&rArr; \[sen(\alpha + \beta)= sen(\alpha)cos(\beta) + sen(\beta)cos(\alpha)\] +
+\[\frac{sen(\alpha - \beta)= sen(\alpha) cos (\beta) - sen (\beta) cos (\alpha)}{sen(\alpha + \beta) + sen(\alpha - \beta)= 2 sen(\alpha) cos(\beta)}\]
+</p>
+
+<p>
+Debemos encontrar un valor para las variables \(\alpha\) y \(\beta\) para esto definiremos a 
+\((\alpha + \beta)=x\) y a \((\alpha - \beta)=y\) donde, si sumamos estos términos tenemos: \newline
+</p>
+
+
+\begin{equation*}
+\left.
+\begin{aligned}
+$\Rightarrow \alpha + \beta=x$\\
+\frac{\alpha-\beta=y}{2 \alpha=x+y}\\
+$\alpha= \frac{x+y}{2}$
+\end{aligned}
+\quad\text{Para poder encontrar a $\beta$ debemos de multiplicar por $-1$ a la expresion de $y$}
+\quad\right
+\end{equation*}
+
+
+\begin{equation*}
+\left.
+\begin{aligned}
+$\alpha + \beta =x$\\
+\frac{-\alpha + \beta = -y}{2\beta=x-y}\\
+\beta=\frac{x-y}{2}
+\end{aligned}
+\end{equation*}
+
+<p>
+Ahora solamente hay que sustituir:
+</p>
+
+<p>
+\[\Rightarrow sen(x)+sen(y)=2sen\left(\frac{x+y}{2}\right)cos\left(\frac{x-y}{2}\right)\]
+\(\therefore\) Si se cumple que:
+\[ \boxed{sen(x)+sen(y)=2sen\left(\frac{x+y}{2}\right)cos\left(\frac{x-y}{2}\right)} \]
+\blacksquare
+</p>
+
+<p>
+15.¿Verdadero o falso? Justifica tu respuesta. \newine
+</p>
+
+<ul class="org-ul">
+<li>\(sen(x) + sen(x-120^{\circ}) + sen(60^{\circ}-x)=0\)</li>
+</ul>
+
+<p>
+Aplicando la identidad trigonométrica de sen(&alpha; - &beta;)=sen(&alpha;)cos(&beta;)-sen(&beta;)cos(&alpha;) tenemos:
+</p>
+
+<p>
+\[sen(x)+(sen(x)cos(120^o)-sen(120^{\circ})cos(x))+(sen(60^{\circ})cos(x)-sen(x)cos(60^{\circ}))=0\]
+\[sen(x) + (sen(x)(-1/2)-(\sqrt{3}/2)cos(x))+((\sqrt{3}/2)cos(x)-sen(x)(1/2))=0\]
+\[\left(sen(x)+\left(\frac{-sen(x)}{2}-\frac{\sqrt{3}\cdot cos(x)}{2}\right)\right) + \left(\frac{\sqrt{3}\cdot cos(x)}{2} - \frac{sen(x)}{2}\right)=0\]
+\[sen(x)\frac{-sen(x)}{2}-\frac{\sqrt{3}\cdot cos(x)}{2}+\frac{\sqrt{3}\cdot cos(x)}{2}- \frac{sen(x)}{2}=0\]
+\[\Rightarrow sen(x)-sen(x)=0\]
+\[ \boxed{sen(x) + sen(x-120^{\circ}) + sen(60^{\circ}-x)=0} \]
+\(\therefore\) Es verdadero. \blacksquare \newline
+</p>
+
+<ul class="org-ul">
+<li>tan \((10^{\circ})<tan(70^{\circ})\)</li>
+</ul>
+
+<p>
+Sabemos que el valor de \(tan(10^{\circ})=0.1763\dots\) y el valor \(tan70^{\circ})=2.7474\dots\) 
+</p>
+
+<p>
+\[ \boxed{\Rightarrow 0.1763\dots<2.7474} \]
+</p>
+
+<p>
+\(\therefore\) Es verdadera.\newline
+</p>
+
+<ul class="org-ul">
+<li>Para alguna x, \(sen(x)+cos(x)>2\)</li>
+</ul>
+
+<p>
+Tomemos el ejemplo de x=90, aplicando esto, tenemos:
+\[sen(90)+cos(90)>2\]
+\[1+0>2\] 
+\[ \boxed{1>2} \]
+</p>
+
+
+<p>
+Además las funciones \(sen(x)\) y \(cos(x)\) por su imagen están definidas en el intervalo [-1,1], donde sus 
+valores máximos corresponden a este intervalo. \newline
+\(\therefore\) Es falso.
+</p>
+
+<ul class="org-ul">
+<li>\(tan \left(\frac{\pi}{2}-x \right)=cot(x) \quad tan \left(\frac{\pi}{2}+x \right)=cot(x)\)</li>
+</ul>
+<p>
+\[tan\left (\frac{\pi}{2}+x \right)= \frac{sen((\pi /2)+x)}{cos((\pi /2)+x)}\]
+\[=\frac{sen(\pi /2)cos(x)+sen(x)cos(\pi /2)}{cos(\pi /2)cos(x)-sen(\pi /2)sen(x)}\]
+</p>
+
+<p>
+\[=\frac{cos(x)+0}{0-sen(x)}\]
+\[=\frac{-cos(x)}{sen(x)}\]
+\[=-cot(x)\]
+\[ \boxed{\therefore tan(\pi /2+x)=-cot(x)} \]
+\blacksquare
+</p>
+
+<p>
+\[\left(tan\left(\frac{\pi}{2}-x)=\frac{sen((\pi /2)-x)}{cos((\pi /2)-x)}\right)\right)\]
+\[=\frac{sen(\pi /2)cos(x)-sen(x)cos(\pi /2)}{cos(\pi /2)cos(x)+sen(\pi /2)sen(x)}\]
+\[=\frac{cos(x)-0}{0+sen(x)}\]
+\[=\frac{cos(x)}{sen(x)}\]
+\[=cot(x)\]
+\[\therefore tan(\pi /2 - x)=cot(x)\]
+\blacksquare \newline
+</p>
+
+
+<p>
+Por lo tanto, es verdadera. \newline
+</p>
+
+<p>
+\newpage
+16.Restringa el dominio adecuadamente de las funciones sin \(x\), cos \(x\) y tan \(x\) para graficar sus funciones inversas. 
+Encuentre su imagen de cada una. \newline
+Con ayuda del siguiente teorema podremos resolver el problema. 
+</p>
+
+
+\begin{center}
+\fbox{Teorema de la función inversa:}
+\end{center}
+
+
+<p>
+Sea \(f:[a,b]\rightarrow \mathbb{R}\) continua, inyectiva y derivable en un punto \(x_0\in[a,b]\) tal que <br />
+\[f'(x_0) \neq 0\]
+Entonces \(f^-^1\) es derivable en \(y_0=f(x_0)\) y satisface:<br />
+\[(f^-^1)^1y_0=\frac{1}{f'(x_0)}=\frac{1}{f'(f'(y_0))}\]
+</p>
+
+
+
+<ul class="org-ul">
+<li>sen(x)</li>
+</ul>
+<p>
+Consideremos \(sen:((-\pi /2), (\pi /2)) \rightarrow \mathbb{R}\) y sabemos que \(sen'(x)=cos(x)>0\) <br />
+\(\Rightarrow sen\) es estrictamente creciente en \(((-\pi /2), (\pi /2))\) <br />
+\(\Rightarrow sen\) es inyectiva<br />
+\(\Rightarrow sen:((-\pi /2), (\pi /2)) \rightarrow (-1,1)\) biyectiva<br />
+\[ \boxed{\therefore arcsen= sen^-^1 :(-1,1)\rightarrow ((-\pi /2), (\pi /2))} \]
+</p>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/sen3.png" alt="sen3.png" />
+</p>
+</div>
+
+
+<ul class="org-ul">
+<li>cos(x)</li>
+</ul>
+<p>
+Consideremos \(cos\cdot(0,\pi) \rightarrow \mathbb{R}\) y sabemos que \(cos'(x)=-sen(x)<0\) <br />
+\(\Rightarrow cos\) es estrictamente decreciente en \((0,\pi)\) <br />
+\(\Rightarrow cos\) es inyectivo<br />
+\(\Rightarrow cos:(0,\pi)\rightarrow (-1,1)\) es biyectiva <br />
+\[ \boxed{\therefore arccos=cos^-1=(-1,1)\rightarrow(0,\pi)} \]
+</p>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/cos3.png" alt="cos3.png" />
+</p>
+</div>
+
+<ul class="org-ul">
+<li>tan(x)</li>
+</ul>
+<p>
+Consideremos tan:((-&pi; /2), (&pi; /2)) y sabemos que \(tan^1(x)=sec^2(x)>0\) <br />
+\(\Rightarrow\) tangente es estrictamente creciente en \(((-\pi /2),(\pi /2))\) <br />
+\(\Rightarrow\) tangente  es inyectiva<br />
+\(\Rightarrow tan:((-\pi /2), (\pi/2)) \rightarrow \mathbb{R}\) es biyectiva<br />
+\[ \boxed{\therefore arctan=tan^-1=(\mathbb{R}\rightarrow((-\pi /2), (\pi /2))} \]
+</p>
+
+
+<div class="figure">
+<p><img src="file:///home/natalia/Documentos/imagenes_emacs/tan.png" alt="tan.png" />
+</p>
+</div>
+
+<p>
+\newpage
+17.Resolver los siguientes problemas:
+</p>
+
+<ul class="org-ul">
+<li>Calcula la altura de un árbol, sabiendo que desde un punto del terreno se observa su copa bajo un</li>
+</ul>
+<p>
+ángulo de \(60^{\circ}\) y si retrocedemos \(10m\), bajo un ángulo de \(30^{\circ}\).
+<img src="file:///home/natalia/Documentos/imagenes_emacs/arbol.png" alt="arbol.png" />
+</p>
+
+<p>
+Basandonos en la representación anterior, primero calculamos el valor de \(x\) con respecto al ángulo de \((60^{\circ})\)
+</p>
+
+<p>
+i) Calculo de la tangente de \((60^{\circ})\):
+\[tan 60^{\circ}=\frac{h}{x}\]
+\[=1,7\]
+\[1,7=\frac{h}{x}\]
+\[ \boxed{x=\frac{h}{1,7}} \]
+</p>
+
+<p>
+ii) Calculo del valor de \(h\) con respecto al ángulo de \(30^{\circ}\)
+</p>
+
+<p>
+\[tan 30^{\circ}=\frac{h}{10+x} = 0.6\]
+\[0.6=\frac{h}{10+x}\]
+\[ \boxed{h=0.6(10+x)} \]
+</p>
+
+<p>
+iii) Ahora remplazamos la ecuación i) y ii) para asi trabajar con una sola variable.
+\[h=0.6(10+x)\]
+\[h=0.6\left(10 + \frac{h}{1.7}\right)\]
+\[h=6+0.4h\]
+\[h-0.4h=6\]
+\[0.6h=6\]
+\[ \boxed{h=\frac{6}{0.6}=10m} \]
+\(\therefore\) La altura del árbol es de 10m.
+</p>
+
+<ul class="org-ul">
+<li>Un observador se encuentra en un faro al pie de un acantilado. Esta a \(687m\) sobre el nivel del mar, desde este punto observa un</li>
+</ul>
+<p>
+barco con un ángulo depresión de \(23^{\circ}\). Se desea saber a que distancia de la base del acantilado se encuentra el barco.
+</p>
+
+<p>
+i) ¿A qué distancia de la base del acantilado se encuentra el barco?
+<img src="file:///home/natalia/Documentos/imagenes_emacs/barco.png" alt="barco.png" />
+</p>
+
+<p>
+ii) Con esto ya podemos calcular la distancia \(x\):
+</p>
+
+<p>
+\[tan \theta = \frac{C.O}{C.A}; \quad tan 23^{\circ}=\frac{h(faro)}{x}\]
+\[x=\frac{h(faro)}{tan 23 ^{\circ}}; \quad \frac{687m}{tan23^{\circ}}\]
+\[ \boxed{x=1618.47056m} \]
+\(\therefore\) La distancia del barco al acantilado es de 1618.47m. <br />
+</p>
+
+<p>
+\newpage
+18.Hallar la ecuación polar de:
+</p>
+
+<ul class="org-ul">
+<li>\(y=x\)</li>
+</ul>
+<p>
+\[y=x \rightarrow x=r \cdot cos \theta; y=r\cdot \theta \]
+\[\rightarrow y=x \rightarrow r\cdot sen (a) \rightarrow r\cdot sen (a) - r \cdot cos (a)=0\]
+\[\rightarrow r\cdot (sen (a)-cos (a))=0 \rightarrow r=\frac{0}{sen(a)-cos(a)}\]
+\[ \boxed{\therefore r=0} \]
+</p>
+
+<ul class="org-ul">
+<li>\(x^2-2x+y^2=0\)</li>
+</ul>
+<p>
+\[x^2-2x+y^2=0 \rightarrow (r\cdot cos (a))^2-2(r\cdot cos (a)) + (r\cdot sen (a))^2\]
+\[\rightarrow r^2 cos^2(a)^2 -2 r\cdot cos (a)+r^2 \cdot sen^2 (a)\]
+\[\rightarrow r^2(cos^2(a)) + sen^2 (a)=1\]
+\[\rightarrow r^2(cos^2(a)+sen^2(a))-2r\cdot cos(a)\]
+como cos<sup>2a</sup>+sen<sup>2a</sup>=1
+\[\rightarrow r^2(1)-2r\cdot cos (a)\]
+\[\rightarrow r^2=2r\cdot cos (a)\]
+\[ \boxed{\therefore r=2cos(a)} \]
+</p>
+
+<ul class="org-ul">
+<li>\(4x+9y=1\)</li>
+</ul>
+<p>
+\[4x+9y=1 \rightarrow 4r\cdot cos (a) +9 r\cdot sen (a)=1\]
+\[\rightarrow r(4cos(a) + 9 sen (a))=1\]
+\[ \boxed{\therefore r=\frac{1}{4cos (a) +9sen (a)}} \]
+</p>
+
+
+<ul class="org-ul">
+<li>\(y^2=4x\)</li>
+</ul>
+<p>
+Como y<sup>2</sup>=4x 
+\[\rightarrow (r\cdot sen(a))^2=(4r\cdot cos (a))\]
+\[\rightarrow r^2 sen^2 (a)=4r \cdot cos (a)\]
+\[\rightarrow r^2=\frac{4r\cdot cos(a)}{sen^2(a)}\]
+como \(\frac{r\cdot cos (a)}{sen^2a}= csc(a)cot(a)\)
+\[\rightarrow r^2=4x\cdot csc(a)cot(a)\]
+\[ \boxed{r=4csc(a)cot(a)} \]
+</p>
+
+
+<p>
+\newpage
+Y la ecuación cartesiana de
+</p>
+
+<ul class="org-ul">
+<li>\(r=\frac{1}{1-cos\theta}\)</li>
+</ul>
+
+<p>
+\[r=\frac{1}{1-cos\theta} \rightarrow r(1-cos\theta )=1\]
+\[\rightarrow r- r\cdot cos \theta =1\]
+\[\rightarrow (\sqrt{x^2+y^2})^2=(1+x)^2\]
+\[\rightarrow x^2+y^2=1+2x+x^2\]
+\[\rightarrow x^2+y^2-1-x^2-2x=0\]
+\[ \boxed{\rightarrow y^2-2x-1=0} \]
+</p>
+
+<ul class="org-ul">
+<li>\(r^2cos2\theta =8\)</li>
+</ul>
+
+<p>
+Identidades trigonométricas angulo doble
+\[cos2(a)=cos^2(a)-sen^2(a)\]
+\[\rightarrow r^2 (cos^2(\theta ) - sen^2 (\theta ) =8\]
+\[\rightarrow r^2 cos^2(\theta )-r\cdot sen^2(\theta )=8\]
+\[\rightarrow (r\cdot cos(\theta ))^2-(r\cdot(\theta ))^2=8\]
+\[\rightarrow (r\cdot cos(\theta ))^2-(r\cdot sen(\theta ))^2=8\]
+\[\rightarrow x^2-y^2=8\]
+\[ \boxed{x^2-y^2-8=0} \]
+</p>
+
+
+<ul class="org-ul">
+<li>\(r=\frac{5}{cos\left(\theta - \frac{\pi}{3}\right)}\)</li>
+</ul>
+
+<p>
+\[x=r\cdot cos \theta \rightarrow cos \theta = \frac{x}{r}\]
+\[y=r\cdot sen \theta \rightarrow sen \theta = \frac{y}{r}\]
+<img src="file:///home/natalia/Documentos/imagenes_emacs/pi3.png" alt="pi3.png" />
+</p>
+
+<p>
+\[r=\frac{5}{cos\left(\theta - \frac{\pi}{3}\right)}\]
+\[r=(\frac{5}{(cos \theta)/2) + ((\sqrt{3} sen \theta)/2)}=\frac{10}{cos\theta + \sqrt{3}sen \theta}\]
+\[r=\frac{10}{(x/r)+ (\sqrt{3}) (y/r)}=\frac{10r}{x+(\sqrt{3})y}\]
+\[r\cdot cos(\theta-(\pi/3))=5\]
+\[r((1/2)cos \theta+ (\sqrt{3}/2)sen\theta)=5\]
+\[\frac{r\cdot cos \theta}{2} + r \frac{\sqrt{3}}{2}sen \theta=5\]
+\[\frac{1}{2} r\cdot cos \theta + \frac{\sqrt{3}}{2} r \cdot sen \theta =5\]
+\[\frac{1}{2} x + \frac{\sqrt{3}}{2} y =5\]
+\[\frac{1}{2} x + \frac{\sqrt{3}}{2} y - 5 =0\]
+\[y=\frac{2(5-(1/2)x)}{\sqrt{3}}=\frac{10-x}{\sqrt{3}}\]
+\[y=-\frac{x}{\sqrt{3}}+\frac{10}{\sqrt{3}}\]
+</p>
+
+
+<ul class="org-ul">
+<li>\(r=3cos \theta\)</li>
+</ul>
+<p>
+\[r=3cos \theta \rightarrow r - 3cos(\theta )=0\]
+\[\rightarrow \frac{r^2-3r\cdot cos (\theta )}{r}=0\]
+\[r^2-3r\cdot cos (\theta )=0\]
+\[ \boxed{(x^2+y^2)-3x=0} \]
+</p>
+
+<p>
+19.Demostrar que la distancia que separa a los puntos \((r_1,\theta)\) y \((r_2,\theta_2)\) está dada por:
+\[d=\sqrt{r^2_2 + r^2_2 - 2r_2r_1 cos (\theta_2-\theta_1)\]
+</p>
+
+<p>
+i) Para ver que esto se cumple hay que cambiarlo a coordenadas cartesianas:
+</p>
+
+<ul class="org-ul">
+<li>Sabemos que la ecuación de distancia entre dos puntos es</li>
+</ul>
+
+<p>
+\[d=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\]
+</p>
+
+<p>
+Entonces hay que pasar la ecuación a ésta forma:
+</p>
+
+<ul class="org-ul">
+<li>Primero desarrollaremos el coseno</li>
+</ul>
+
+<p>
+\[cos(\theta_1 - \cos\theta_2)= cos \theta_1 \cdot cos\theta_2 + sen\theta_1 sen \theta_2\]
+</p>
+
+<ul class="org-ul">
+<li>Sustituyendo tenemos:</li>
+</ul>
+
+<p>
+\[d=\sqrt{r^2_2 + r^2_1 - 2r_2r_1 (cos\theta_1 \cdot cos\theta_2 + sen\theta_1 \cdot sen\theta_2)}\]
+</p>
+
+<ul class="org-ul">
+<li>Ahora haciendo uso de la siguiente relación:</li>
+</ul>
+
+<p>
+\[cos\theta=\frac{x}{r}, sen\theta=\frac{y}{r}\]
+</p>
+
+<p>
+Tenemos que:
+</p>
+
+<p>
+\[d=\sqrt{r^2_2 + r^2_1 - 2r_2r_1 \left(\frac{x_1}{r_1} \cdot \frac{x_2}{r_2} + \frac{y_1}{r_1} \cdot \frac{y_2}{r_2}\right)}\]
+\[d=\sqrt{r^2_2 + r^2_1 - 2x_1 x_2 - 2 y_1y_2}\]
+</p>
+
+<p>
+\newpage
+20.Dibujar la gráfica de las siguientes ecuaciones:
+</p>
+<ul class="org-ul">
+<li>Una Lemniscata es una curva cuya ecuación tiene la forma:</li>
+</ul>
+<p>
+\[r^2=4\cdot cos2\theta\]
+<img src="file:///home/natalia/Documentos/imagenes_emacs/polar1.png" alt="polar1.png" />
+\newpage
+</p>
+<ul class="org-ul">
+<li>Una Cardioide es una curva cuya ecuación es:</li>
+</ul>
+<p>
+\[r=3(1+cos\theta)\]
+<img src="file:///home/natalia/Documentos/imagenes_emacs/polar2.png" alt="polar2.png" />
+</p>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-05-24 mar 10:14</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
